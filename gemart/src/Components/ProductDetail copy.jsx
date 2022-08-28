@@ -1,11 +1,7 @@
 
 import React from 'react'
-// import {DATA} from '../Data'
-import { NavLink, useParams } from 'react-router-dom';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addCart, delCart } from '../redux/action/index'
 import {DATA} from '../Data'
+import { NavLink} from 'react-router-dom';
 var data = [{
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -261,52 +257,95 @@ var data = [{
     }
 }
 ];
-
 function ProductDetail() {
-    const [cartBtn, setcartBtn] = useState("Add to Cart");
-    const proid = useParams();
-    // const productDetail = DATA.filter(x => x.id == proid.id);
-    const productDetail = data.filter(x => x.id == proid.id);
-    const product = productDetail[0];
-    // console.log(DATA)
-    // console.log(data)
-    const dispatch = useDispatch();
-    const handleCart = (product) => {
-        if (cartBtn === "Add to Cart") {
-            dispatch(addCart(product))
-            setcartBtn("Remove from Cart")
-        }
-        else {
-            dispatch(delCart(product))
-            setcartBtn("Add to Cart")
-        }
+    console.log(DATA);
+    const cardItem = (item) => {        
+        return (
+            <div className="card my-4 py-4 mx-2 h-100" key={item.id} style={{width: "18rem"}}>
+                <img src={item.image} className="card-img-top" height="250px" width={400} alt={item.title} />
+                <div className="card-body text-center">
+                    <h5 className="card-title">{item.title.substring(0,12)}...</h5>
+                    <p className="lead">${item.price}</p>
+                    <NavLink to={`/products/${item.id}`} className="btn btn-primary">Buy Now</NavLink>
+                </div>
+            </div>
+        )
     }
     return (
-        <>
-            <h1 className='text-center text-capitalize'>{product.category}</h1>
-            <hr />
-            <div className="container my-5">
-                <div className="col d-flex justify-content-center">
-                    <div className="col-mid-6 d-flex justify-content-center product">
-                        <img height="250px" src={product.image} alt={product.title} />
-                    </div>
-                    <div className="col-mid-6 mx-5 d-flex flex-column justify-content-center">
-                        <h1 className='display-5 fw-bold'>{product.title}</h1>
+        <div>
+            <div className="container py-4">
+                <div className="row">
+                    <div className="col-12 text-center">
+                        <h1>Product</h1>
                         <hr />
-                        <h2 className='my-4'>{product.price}(ETB)</h2>
-                        <p className='lead'>{product.description}</p>
-                        <div className='d-flex'>
-                            <button onClick={() => handleCart(product)} className='btn ms-5 btn-outline-dark w-25'>{cartBtn}</button>
-                            <NavLink to="/cart" className="btn btn-outline-dark ms-4 ">
-                                <span className="fa">Go to Cart</span>
-                            </NavLink>
-                        </div>
                     </div>
                 </div>
             </div>
-        </>
+            <div className="container">
+                <div className="row justify-content-center">
+                    {/* {[DATA].map(cardItem)} */}
+                    {data.map (cardItem) 
+                    // {
+                    //     return(
+                    //     <div className="card" >
+                    //     <img src={item.img} className="card-img-top" alt={item.title} />
+                    //     <div className="card-body">
+                    //         <h5 className="card-title">{item.title}</h5>
+                    //         <p className="lead">${item.price}</p>
+                    //         <a href="#" className="btn btn-outline-dark">Go somewhere</a>
+                    //     </div>
+                    // </div>
+                    //     );
+                    //  })
+                }
+                </div>
+            </div>
+        </div>
     )
-
 }
 
-export default ProductDetail;
+export default ProductDetail
+
+// import { useState } from "react"
+// import {DATA} from '../Data'
+// import { useParams } from "react-router-dom"
+// import CartBtn from "./CartBtn";
+// import { Dispatch, useDispatch } from "react-redux";
+// import {addCart, delCart} from '../redux/action/index'
+// const ProductDetail = () => {
+// const [cartBtn, setcartBtn] = useState("Add to Cart");
+// // Now we need a product id which is pass from the product page.
+// const proid = useParams();
+// console.log(proid);
+// const productDetail = DATA.filter(x=>x.id == proid.id);
+// const product = productDetail[0];
+// console.log(product);
+// const dispatch =  useDispatch ()
+// const handleCart = (product) => {
+//     if (CartBtn === "Add to Cart"){
+//         dispatch(addCart(product))
+//         setcartBtn("Remove from Cart");
+//     }
+//     else{
+//         dispatch(delCart(product))
+//         setcartBtn("Add to Cart");
+//     }
+// }
+// return (
+//     <>
+//     <div className="container my-5 py-3">
+//         <div className="col-md-6 d-flex justify-content-center mx-auto product">
+//             <img src={product.img} alt={product.title} height="400px"/>
+//         </div>
+//         <div className="col-md-6 d-flex justify-content-center mx-auto">
+//             <h1 className="display-5 fw-bold">{product.title}</h1>
+//             <hr />
+//             <h2 className="my-4">${product.price}</h2>
+//             <p className="lead">{product.desc}</p>
+//             <button onClick={() => handleCart(product)} className="btn btn-outline-primary my-5">{cartBtn}</button>
+//         </div>
+//     </div>
+//     </>
+// )
+// }
+// export default ProductDetail;

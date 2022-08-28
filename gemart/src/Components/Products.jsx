@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import { NavLink } from 'react-router-dom';
+import {DATA} from '../Data'
 function Products() {
+    // console.log(DATA);
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
