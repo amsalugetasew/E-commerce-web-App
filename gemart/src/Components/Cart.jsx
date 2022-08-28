@@ -1,13 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import Product from './Product'
+// import Product from './Product'
 import { useDispatch } from 'react-redux'
-import { addCart, delCart } from '../redux/action/index'
+import { delCart } from '../redux/action/index'
 import { NavLink } from 'react-router-dom'
 function Cart() {
   // write name of the file not the name of the function
   const state = useSelector((state) => state.handleCart);
-  console.log(state)
   const dispatch = useDispatch();
   const handleClose = (Item) => {
     dispatch(delCart(Item));
@@ -18,7 +17,7 @@ function Cart() {
         key={cartItem.id}
       >
         <div className="container py-4">
-          <button onClick={() => handleClose(cartItem)} className="btn btn-close float-end" aria-lebel="close"></button>
+          <button onClick={() => handleClose(cartItem)} className="btn btn-close float-end"></button>
           <div className="row justify-content-center">
             <div className="col-md-4">
               <img src={cartItem.image} alt={cartItem.title} height="200px" width="180px" />

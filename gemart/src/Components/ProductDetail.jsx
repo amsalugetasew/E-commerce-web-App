@@ -5,7 +5,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addCart, delCart } from '../redux/action/index'
-import {DATA} from '../Data'
+// import {DATA} from '../Data'
 var data = [{
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -266,6 +266,7 @@ function ProductDetail() {
     const [cartBtn, setcartBtn] = useState("Add to Cart");
     const proid = useParams();
     // const productDetail = DATA.filter(x => x.id == proid.id);
+    
     const productDetail = data.filter(x => x.id == proid.id);
     const product = productDetail[0];
     // console.log(DATA)
