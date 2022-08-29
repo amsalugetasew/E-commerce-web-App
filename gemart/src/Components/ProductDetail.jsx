@@ -268,7 +268,7 @@ function ProductDetail() {
     const proid = useParams();
        // true: Require triple equals (===) for comparison
     // const productDetail = DATA.filter(x => x.id == proid.id);
-    const productDetail = data.filter(x => x.id == (proid.id));
+    const productDetail = data.filter(x => (x.id).toString()  == (proid.id).toString() );
     
     const product = productDetail[0];
     // console.log(DATA)

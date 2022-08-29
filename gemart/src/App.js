@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <Routes>
+      <Routes basename="/E-commerce-web-App">
         <Route  path='/' element={
           <Home/>
         }/>
