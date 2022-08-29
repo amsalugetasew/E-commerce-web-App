@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import {useSelector} from 'react-redux'
+import Bg from './assests/logo.png'
 function NavBar() {
     const state = useSelector((state) => state.handleCart)
     return (
@@ -7,7 +8,8 @@ function NavBar() {
             <nav className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
                 <div className="container">
                     <NavLink className="navbar-brand fw-bold fs-4" to="/">
-                        Gech Collection
+                        {/* Habesha Collection */}
+                        <img src={Bg} alt="habesha logo" width='200px' />
                     </NavLink>
                     <button className="navbar-toggler" type="buttonhref" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

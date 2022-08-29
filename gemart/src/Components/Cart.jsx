@@ -13,7 +13,7 @@ function Cart() {
   }
   const cartItems = (cartItem) => {
     return (
-      <div className='px-4 my-5 bg-light rounded-3'
+      <div className='px-4 my-5 bg-light rounded-3 mx-5 my-5 me-5'
         key={cartItem.id}
       >
         <div className="container py-4">

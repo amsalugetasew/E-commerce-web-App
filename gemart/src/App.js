@@ -10,6 +10,8 @@ import Cart from './Components/Cart';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import Checkout from './Components/Checkout';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,12 @@ function App() {
       <Routes basename="/E-commerce-web-App">
         <Route  path='/' element={
           <Home/>
+        }/>
+        <Route  path='/sign-in' element={
+          <Login/>
+        }/>
+        <Route  path='/sing-up' element={
+          <Signup/>
         }/>
         <Route  path='/about' element={
           <About/>

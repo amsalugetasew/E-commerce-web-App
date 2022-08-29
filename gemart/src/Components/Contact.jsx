@@ -1,5 +1,5 @@
 import React from 'react'
-import Bg from './assests/gechP.jpg'
+import Bg from './assests/habesha.jpg'
 // import "./App.css"
 function Contact() {
   return (
@@ -13,8 +13,8 @@ function Contact() {
         </div>
         <div className='col-md-10 d-flex'>
         <div className="row  mx-5">
-          <div className="col-md 5 d-flex justify-content-center">
-            <img src={Bg} width="400px" height="400px" alt="Contact Us" />
+          <div className="col-md 0 d-flex justify-content-center">
+            <img src={Bg} width="300px" height="300px" alt="Contact Us" />
           </div>
         </div>
         <div className="col-6 justify-content-center text-center">
