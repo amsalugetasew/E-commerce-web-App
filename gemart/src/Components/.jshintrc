@@ -1,0 +1,4 @@
+/*jshint eqeqeq: true */
+{
+    "eqeqeq": false     // additional predefined global variables
+} 
