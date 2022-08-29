@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Aboutus from './assests/aboutus.jpg'
+import Aboutus from './assests/habesha.jpg'
 function About() {
   return (
     <div>

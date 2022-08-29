@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 var datas = [{
     "id": 1,
     "title": "Jano",
-    "price": 109.95,
+    "price": 3400,
     "description": "Amhara Men traditional clothing for Gondar, Gojam, and Shewa",
     "category": "men's clothing",
     "image": require('../Men/m1.png'),
@@ -19,7 +19,7 @@ var datas = [{
 {
     "id": 2,
     "title": "Gondar Couples cloths",
-    "price": 22.3,
+    "price": 2230,
     "description": "Couples Gondar Cloths for sale and rent",
     "category": "men's clothing",
     "image": require('../Men/m2.jpg'),
@@ -32,7 +32,7 @@ var datas = [{
 {
     "id": 3,
     "title": "Tradditional Amhara clothing",
-    "price": 55.99,
+    "price": 3000,
     "description": "Tradditional Amhara clothing",
     "category": "men's clothing",
     "image": require('../Men/m3.jpg'),
@@ -45,7 +45,7 @@ var datas = [{
 {
     "id": 4,
     "title": "Mens Epiphany group cloth",
-    "price": 15.99,
+    "price": 1560,
     "description": "Gondar Ethiopia men's dressed in traditional attire with pilgrim rod celebrate Epiphany/Timket festival",
     "category": "men's clothing",
     "image": require('../Men/m4.jpg'),
@@ -57,9 +57,9 @@ var datas = [{
 },
 {
     "id": 5,
-    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-    "price": 695,
-    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+    "title": "Hand braclet",
+    "price": 67090,
+    "description": "Traditional Ethiopian Hand braclet",
     "category": "jewelery",
     "image": require('../Jewelry/j1.jpg'),
     "rating":
@@ -70,9 +70,9 @@ var datas = [{
 },
 {
     "id": 6,
-    "title": "Solid Gold Petite Micropave ",
-    "price": 168,
-    "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+    "title": "Necklace Amhara Map",
+    "price": 16809,
+    "description": "Necklace designed on the shape of Amhara Map",
     "category": "jewelery",
      "image": require('../Jewelry/j2.PNG'),
     "rating":
@@ -83,9 +83,9 @@ var datas = [{
 },
 {
     "id": 7,
-    "title": "White Gold Plated Princess",
-    "price": 9.99,
-    "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+    "title": "Necklace Ethiopia",
+    "price": 100000,
+    "description": "Necklace designed on the shape of Ethiopia Map",
     "category": "jewelery",
     "image": require('../Jewelry/j3.PNG'),
     "rating":
@@ -96,9 +96,9 @@ var datas = [{
 },
 {
     "id": 8,
-    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
-    "price": 10.99,
-    "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+    "title": "Necklace Africa Map",
+    "price": 50990,
+    "description": "Necklace designed on the shape of Africa Map",
     "category": "jewelery",
     "image": require('../Jewelry/j4.jpg'),
     "rating":
@@ -109,10 +109,10 @@ var datas = [{
 },
 {
     "id": 9,
-    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-    "price": 64,
-    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-    "category": "gojjam azene",
+    "title": "Dark green gojjam azene",
+    "price": 3783.07,
+    "description": "Dark green gojam azene",
+    "category": "gojam azene",
     "image": require('../Gojjam/g1.PNG'),
     "rating":
     {
@@ -122,10 +122,10 @@ var datas = [{
 },
 {
     "id": 9,
-    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-    "price": 64,
-    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-    "category": "gojjam azene",
+    "title": "Blue bernos gojam Azene ",
+    "price": 2400,
+    "description": "Blue bernos gojjam Azene",
+    "category": "gojam azene",
     "image": require('../Gojjam/g7.jpg'),
     "rating":
     {
@@ -135,10 +135,10 @@ var datas = [{
 },
 {
     "id": 9,
-    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-    "price": 64,
-    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-    "category": "gojjam azene",
+    "title": "greena and blue banket",
+    "price": 3200,
+    "description": "greena and blue banket",
+    "category": "gojam azene",
     "image": require('../Gojjam/g5.PNG'),
     "rating":
     {
@@ -148,10 +148,10 @@ var datas = [{
 },
 {
     "id": 10,
-    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-    "price": 109,
-    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
-    "category": "gojjam azene",
+    "title": "Ethiopian flag gojam azene",
+    "price": 2700,
+    "description": "Ethiopian flag gojam azene",
+    "category": "gojam azene",
     "image": require('../Gojjam/g2.jpg'),
     "rating":
     {
@@ -161,10 +161,10 @@ var datas = [{
 },
 {
     "id": 11,
-    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-    "price": 109,
-    "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
-    "category": "gojjam azene",
+    "title": "Yellow and blue black gojam azene blanket",
+    "price": 3500,
+    "description": "Yellow and blue black gojam azene blanket",
+    "category": "gojam azene",
     "image": require('../Gojjam/g3.jpeg'),
     "rating":
     {
@@ -174,10 +174,10 @@ var datas = [{
 },
 {
     "id": 12,
-    "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-    "price": 114,
-    "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
-    "category": "gojjam azene",
+    "title": "Red and Black black gojam azene blanket",
+    "price": 3000,
+    "description": "Red and Black black gojam azene blanket",
+    "category": "gojam azene",
     "image": require('../Gojjam/g4.png'),
     "rating":
     {
@@ -187,10 +187,10 @@ var datas = [{
 },
 {
     "id": 13,
-    "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-    "price": 599,
-    "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
-    "category": "gojjam azene",
+    "title": "Gojam Azen blanket",
+    "price": 1500,
+    "description": "Gojam Azen blanket",
+    "category": "gojam azene",
     "image": require('../Gojjam/g3.PNG'),
     "rating":
     {
@@ -200,10 +200,10 @@ var datas = [{
 },
 {
     "id": 14,
-    "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
-    "price": 999.99,
-    "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
-    "category": "gojjam azene",
+    "title": "Gojam Azene Jacket",
+    "price": 1500,
+    "description": "Gojam Azene Jacket",
+    "category": "gojam azene",
     "image": require('../Gojjam/g2.PNG'),
     "rating":
     {
@@ -214,7 +214,7 @@ var datas = [{
 {
     "id": 15,
     "title": "Gondar Women's cloth and interesting Mekenet",
-    "price": 56.99,
+    "price": 2900,
     "description": "Gondar Women's cloth and interesting Mekenet with red, green, yellow, and black",
     "image": require('../Women/m1.jpg'),
     "rating": { "rate": 2.6, "count": 235 }
@@ -222,7 +222,7 @@ var datas = [{
 {
     "id": 16,
     "title": "Gondar Women's cloth and interesting Mekenet",
-    "price": 29.95,
+    "price": 3500,
     "description": "Gondar Women's cloth and interesting Mekenet with red, green, yellow, and black",
     "category": "women's clothing",
     "image": require('../Women/m2.jpg'),
@@ -235,7 +235,7 @@ var datas = [{
 {
     "id": 17,
     "title": "Gondar Women's cloth and interesting Mekenet",
-    "price": 39.99,
+    "price": 5000,
     "description": "Gondar Women's cloth and interesting Mekenet with red, green, yellow, and black",
     "image": require('../Women/m7.jpg'),
     "rating":
@@ -247,7 +247,7 @@ var datas = [{
 {
     "id": 18,
     "title": "Gondar Women's cloth and interesting Mekenet",
-    "price": 9.85,
+    "price": 3500,
     "description": "Gondar Women's cloth and interesting Mekenet with red, green, yellow, and black",
     "category": "women's clothing",
     "image": require('../Women/m15.jpg'),
@@ -260,7 +260,7 @@ var datas = [{
 {
     "id": 19,
     "title": "Gondar Women's cloth and interesting Mekenet",
-    "price": 7.95,
+    "price": 3500,
     "description": "Gondar Women's cloth and interesting Mekenet with red, green, yellow, and black",
     "category": "women's clothing",
     "image": require('../Women/m5.jpg'),
@@ -273,7 +273,7 @@ var datas = [{
 {
     "id": 20,
     "title": "Gondar Women's cloth with red Mekenet",
-    "price": 12.99,
+    "price": 3400,
     "description": "Gondar Women's cloth with red Mekenet",
     "category": "women's clothing",
     "image": require('../Women/m6.jpg'),
@@ -286,7 +286,7 @@ var datas = [{
 {
     "id": 21,
     "title": "Gondar Women's cloth with red Mekenet",
-    "price": 12.99,
+    "price": 4000,
     "description": "Gondar Women's cloth with red Mekenet",
     "category": "women's clothing",
     "image": require('../Women/m13.jpg'),
@@ -299,7 +299,7 @@ var datas = [{
 {
     "id": 22,
     "title": "Gondar Women's cloth with red Mekenet",
-    "price": 12.99,
+    "price": 3600,
     "description": "Gondar Women's cloth with red Mekenet",
     "category": "women's clothing",
     "image": require('../Women/m10.jpg'),
@@ -312,7 +312,7 @@ var datas = [{
 {
     "id": 23,
     "title": "Gondar Women's cloth with red Mekenet",
-    "price": 12.99,
+    "price": 3500,
     "description": "Gondar Women's cloth with red Mekenet",
     "category": "women's clothing",
     "image": require('../Women/m8.jpg'),
@@ -394,7 +394,7 @@ function Products() {
                     <button className='btn btn-outline-dark me-2' onClick={()=>filterProduct("men's clothing")}>Men's Clothing</button>
                     <button className='btn btn-outline-dark me-2' onClick={()=>filterProduct("women's clothing")}>Women's Clothing</button>
                     <button className='btn btn-outline-dark me-2' onClick={()=>filterProduct("jewelery")}>Jewlery</button>
-                    <button className='btn btn-outline-dark me-2' onClick={()=>filterProduct("gojjam azene")}>Gojjam Azene</button>
+                    <button className='btn btn-outline-dark me-2' onClick={()=>filterProduct("gojam azene")}>Gojam Azene</button>
                 </div>
                 {filter.map((product) => {
                     return (
@@ -403,7 +403,7 @@ function Products() {
                                 <img src={product.image} height="250px" className="card-img-top" alt={product.title}/>
                                 <div className="card-body">
                                     <h5 className="card-title mb-0">{product.title.substring(0,12)}...</h5>
-                                    <p className="card-text lead fw-bold">${product.price}</p>
+                                    <p className="card-text lead fw-bold">{product.price} ETB</p>
                                     <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark">Buy Now</NavLink>
                                 </div>
                             </div>
