@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import Bg from '../Components/assests/habesha.jpg'
 const AddProduct = () => {
   const [error, setError] = useState("")
@@ -13,6 +14,7 @@ const AddProduct = () => {
     setData({ ...data, [input.name]: input.value });
     setError("");
   };
+  const navigate = useNavigate()
   const handleSubmite = (event) => {
     event.preventDefault();
     if (!data.image) {
@@ -21,12 +23,18 @@ const AddProduct = () => {
     if (!data.title) {
       setError("Title Is Required");
     }
-    else if (!data.catagory) {
-      setError("Catagory Is Required")
+    else if (data.catagory === "Select Product Catagory") {
+      setError("Please Select Catagory")
     }
+    else if (!data.description) {
+      setError("Description Is Required")
+    }
+    else if (!data.price) {
+      setError("Price Is Required")
+    }    
     else {
-      alert("Done")
-      // navigate('/add-item')
+      alert("Done"+data.catagory)
+      navigate('/Products')
     }
   }
 
@@ -45,8 +53,6 @@ const AddProduct = () => {
   return (
     <div>
       <div className='col-md-10 d-flex mb-5 my-5'>
-        Add Item
-
         <div className="row  mx-5">
           <div className="col-md 5 d-flex justify-content-center my-5 mx-5">
             <img src={Bg} width="300px" height="300px" alt="Contact Us" />
@@ -74,7 +80,7 @@ const AddProduct = () => {
             <div className="mb-3">
               <label htmlFor="title" className="form-label">Product Catagory</label>
               <select name="catagory" id="catagory" className="form-control">
-                <option value="Select Product Catagory">Select Product Catagory</option>
+                <option value="Select Product Catagory" select>Select Product Catagory</option>
                 <option value="men's clothing">Men's clothing</option>
                 <option value="women's clothing">Women's clothing</option>
                 <option value="gojam azene">Gojam Azene</option>
