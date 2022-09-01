@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import Bg from '../Components/assests/habesha.jpg'
 const AddProduct = () => {
   const [error, setError] = useState("")
   const [data, setData] = useState({
@@ -52,15 +51,16 @@ const AddProduct = () => {
 //  }
   return (
     <div>
-      <div className='col-md-10 d-flex mb-5 my-5'>
-        <div className="row  mx-5">
-          <div className="col-md 5 d-flex justify-content-center my-5 mx-5">
-            <img src={Bg} width="300px" height="300px" alt="Contact Us" />
+      <div className='col-md-10 d-flex mb-5 my-5 justify-content-center'>
+        <div className="row  mx-5 px-5">
+          <div className="">
+            {/* <img src={Bg} width="200px" height="200px" alt="Contact Us" /> */}
           </div>
         </div>
-        <div className="col-6 justify-content-center text-center align-content-center">
-          <form onSubmit={handleSubmite} className='bg-white justify-content-center align-content-center  mx-5 my-5'>
-            <div className="mb-3">
+        <div className="col-10  text-center align-content-center">
+          <form onSubmit={handleSubmite} className='bg-white  align-content-center  mx-5 my-5'>
+            <div className='d-flex  mx-5 px-5'>
+            <div className="mb-3 me-3 col-6">
               <label htmlFor="image" className="form-label">Product Image</label>
               <input type="file"
                 required
@@ -69,7 +69,7 @@ const AddProduct = () => {
                 className="form-control"
                 id="image" name='image' />
             </div>
-            <div className="mb-3">
+            <div className="mb-3 me-3 col-6">
               <label htmlFor="title" className="form-label">Product Title</label>
               <input type="text"
                 value={data.title}
@@ -77,7 +77,9 @@ const AddProduct = () => {
                 className="form-control"
                 id="title" name='title' placeholder="Jano" />
             </div>
-            <div className="mb-3">
+            </div>
+            <div className='d-flex mx-5 px-5'>
+            <div className="mb-3 me-3 col-6">
               <label htmlFor="title" className="form-label">Product Catagory</label>
               <select name="catagory" id="catagory" className="form-control">
                 <option value="Select Product Catagory" select>Select Product Catagory</option>
@@ -87,14 +89,8 @@ const AddProduct = () => {
                 <option value="jewelery">Jewelery</option>
               </select>
             </div>
-            <div className="mb-3">
-              <label htmlFor="password" className="form-label">Product Description</label>
-              <textarea cols="30" value={data.description}
-                name='description'
-                onChange={changeName}
-                className="form-control" rows="2"></textarea>
-            </div>
-            <div className="mb-3">
+            
+            <div className="mb-3 me-3 col-6">
               <label htmlFor="price" className="form-label">Product Price</label>
               <input type="number"
                 value={data.price}
@@ -102,7 +98,9 @@ const AddProduct = () => {
                 className="form-control"
                 id="price" name='price' placeholder="ETB" />
             </div>
-            <div className="mb-3">
+            </div>
+            <div className='d-flex mx-5 px-5'>
+            <div className="mb-3 me-3 col-6">
               <label htmlFor="rate" className="form-label">Rate</label>
               <input type="number"
                 value={data.rate}
@@ -110,13 +108,22 @@ const AddProduct = () => {
                 className="form-control"
                 id="rate" name='rate' placeholder="Rate" />
             </div>
-            <div className="mb-3">
+            
+            <div className="mb-3 me-3 col-6">
               <label htmlFor="count" className="form-label">Count</label>
               <input type="number"
                 value={data.count}
                 onChange={changeName}
                 className="form-control"
                 id="count" name='count' placeholder="Count" />
+            </div>
+            </div>
+            <div className='mb-3 mx-5 px-5'>
+              <label htmlFor="password" className="form-label">Product Description</label>
+              <textarea cols="30" value={data.description}
+                name='description'
+                onChange={changeName}
+                className="form-control" rows="2"></textarea>
             </div>
             <div className="mb-3">
               {error && <div className="error_msg">{error}</div>}
