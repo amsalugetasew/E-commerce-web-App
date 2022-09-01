@@ -12,6 +12,7 @@ import Contact from './Components/Contact';
 import Checkout from './Components/Checkout';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
+import AddItem from './Components/AddProduct';
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,9 @@ function App() {
         }/>
         <Route  path='/sign-in' element={
           <Login/>
+        }/>
+        <Route  path='/add-item' element={
+          <AddItem/>
         }/>
         <Route  path='/sing-up' element={
           <Signup/>
