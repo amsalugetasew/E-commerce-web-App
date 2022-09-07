@@ -1,6 +1,26 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import Bg from './assests/habesha.jpg'
+const Record = (props) => (
+    <tr>
+      <td>{props.record.firstName}</td>
+      <td>{props.record.lastName}</td>
+      <td>{props.record.email}</td>
+      {/* <td>{props.record.password}</td> */}
+      {/* <td>{props.record.confirmPassword}</td>    */}
+      <td>{props.record.level}</td>
+      <td>
+        <Link className="btn btn-link" to={`/Home/Other/Edit/${props.record._id}`}>Edit</Link> |
+        <button className="btn btn-link"
+          onClick={() => {
+            props.deleteRecord(props.record._id);
+          }}
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+   );
 const Signup = () => {
     const [error, setError] = useState("");
     const [data, setData] = useState({
@@ -15,8 +35,9 @@ const Signup = () => {
         setData({ ...data, [input.name]: input.value });
         setError("");
     };
-    const handleSubmite = (event) => {
+    const handleSubmite = async(event) => {
         event.preventDefault();
+        const newPerson = { ...data };
         if (!data.Fname ) {
             setError("First Name Is Required");
         }
@@ -42,12 +63,97 @@ const Signup = () => {
             setError("Password is not Matched")
         }
         else {
-            alert("User Successfully Registered")
-            navigate('/sign-in')
+            try{
+                await fetch("http://localhost:5000/users/add", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(newPerson),
+                })
+                    .catch(error => {
+                        window.alert(error);
+                        if (error.response &&
+                            error.response.status >= 400 &&
+                            error.response.status <= 500
+                        ) {
+                            setError(error.response.data.message);
+                        }
+                        return;
+                    });
+                // setData({ firstName: "", lastName: "", email: "",  password: "", Cpassword: "" });
+                alert(`User Successfully Registered ${data.Fname}`)
+                navigate('/sign-in')     
+                }
+                catch(error){
+                    if(error.response && 
+                        error.response.status >= 400 &&
+                        error.response.status <= 500
+                        ){
+                            setError(error.response.data.message);
+                        }
+                }
+            
         }
     }
+    const [records, setRecords] = useState([]);
+    useEffect(() => {
+        async function getRecords() {
+          const response = await fetch(`http://localhost:5000/record/`);
+      
+          if (!response.ok) {
+            const message = `An error occurred: ${response.statusText}`;
+            window.alert(message);
+            return;
+          }
+      
+          const records = await response.json();
+          setRecords(records);
+        }
+      
+        getRecords();
+      
+        return;
+      }, [records.length]);
+      console.log(records)
+
+       // This method will delete a record
+       
+ async function deleteRecord(id) {
+    await fetch(`http://localhost:5000/${id}`, {
+      method: "DELETE"
+    });
+  
+    const newRecords = records.filter((el) => el._id !== id);
+    setRecords(newRecords);
+    alert("deleted")
+  }
+  
+      // This method will map out the records on the table
+ function recordList() {
+    return records.map((record) => {
+      return (
+        <Record
+          record={record}
+          deleteRecord={() => deleteRecord(record._id)}
+          key={record._id}
+        />
+      );
+    });
+  }
     return (
         <div>
+            <table className="table table-striped" style={{ marginTop: 20 }}>
+       <thead>
+         <tr>
+           <th>First Name</th>
+           <th>First Name</th>
+           <th>User Email</th>
+           <th>Action</th>
+         </tr>
+       </thead>
+       <tbody>{recordList()}</tbody>
+     </table>
             <div className='col-md-10 d-flex mb-5 my-5'>
                 <div className="row  mx-5">
                     <div className="col-md 5 d-flex justify-content-center mx-5 my-5">
@@ -87,6 +193,7 @@ const Signup = () => {
                         <div className="mb-3">
                             <label htmlFor="password" className="form-label">Password</label>
                             <input 
+                            autoComplete='current-password'
                             placeholder='Password'
                             value={data.password}
                             name='password'
@@ -96,6 +203,7 @@ const Signup = () => {
                         <div className="mb-3">
                             <label htmlFor="cpassword" className="form-label">Conformation Password</label>
                             <input
+                            autoComplete='on'
                             placeholder='Confirmation Password'
                             value={data.cpassword}
                             name='cpassword'

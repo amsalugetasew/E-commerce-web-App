@@ -35,3 +35,10 @@ code {
 .product img:hover{
   transform: scale(1.1);
 }
+.card-title, .card-text{
+  color: white;
+  margin-bottom: 30px;
+}
+.span{
+  justify-content: center;
+}

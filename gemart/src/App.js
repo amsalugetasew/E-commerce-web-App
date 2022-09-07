@@ -13,6 +13,9 @@ import Checkout from './Components/Checkout';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import AddItem from './Components/AddProduct';
+import Footer from './Components/Footer';
+import UserSetting from './Components/UserSetting';
+// import UserProfile from './Components/UserProfile';
 function App() {
   return (
     <div className="App">
@@ -54,7 +57,14 @@ function App() {
         <Route  path='/cart' element={
           <Cart/>
         }/>
+        <Route  path='/Setting' element={
+          <UserSetting/>
+        }/>
+        {/* <Route  path='/Profile' element={
+          <UserProfile/>
+        }/> */}
       </Routes>
+      <Footer/>
     </div>
   );
 }
