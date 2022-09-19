@@ -1,9 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Aboutus from './assests/habesha.jpg'
+import NavBar from './NavBar'
 function About() {
   return (
     <div>
+      <NavBar/>
         <div className="container d-flex py-4 my-5 justify-content-center">
             <div className="row">
                 <h1 className='text-primary fw-bold'>About Us</h1>

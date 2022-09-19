@@ -1,9 +1,12 @@
 import React from 'react'
 // import Bg from './assests/habeshas.jpg'
 import Bg from './assests/2.jpg'
+import NavBar from './NavBar'
 import Products from './Products'
 function Home() {
     return (
+        <>
+        <NavBar/>
         <div className='hero'>
             <div className="card text-bg-dark border-0">
                 <img src={Bg} className="card-img" alt="background" height="400px"/>
@@ -18,6 +21,7 @@ function Home() {
             </div>
             <Products/>
         </div>
+        </>
     )
 }
 

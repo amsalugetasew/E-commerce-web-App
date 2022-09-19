@@ -11,8 +11,8 @@ app.use(cors());
 app.use(express.json());
 app.use(require("./Routes/ProductRecord"));
 
-const dbo = require("./conn");
-
+const dbo = require("./Database/conn");
+const users = require('./Model/User')
 
 
 app.listen(port, () => {

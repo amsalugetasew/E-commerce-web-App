@@ -1,3 +1,13 @@
+
+// const { MongoClient } = require('mongodb');
+// const uri = "mongodb+srv://gechsew:Gecho%401078@cluster0.ribx0.mongodb.net/?retryWrites=true&w=majority";
+// const clients = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// clients.connect(err => {
+//   const collection = client.db("Products").collection("Users");
+//   // perform actions on the collection object
+//   clients.close();
+// });
+
 const { MongoClient } = require("mongodb");
 const Db = process.env.ATLAS_URI;
 const client = new MongoClient(Db, {
@@ -13,7 +23,7 @@ module.exports = {
       if (db)
       {
         _db = db.db("Products");
-        console.log("Successfully connected to MongoDB, Products"); 
+        console.log(`Successfully connected to MongoDB, ${_db.databaseName}`); 
       }
       return callback(err);
          });

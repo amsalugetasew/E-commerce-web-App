@@ -4,6 +4,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addCart } from '../redux/action'
 import DATA from '../Data'
+import NavBar from './NavBarAfterLogin';
 function Product() {
     const { id } = useParams();
     const [product, setProduct] = useState([]);
@@ -73,6 +74,9 @@ function Product() {
         );
     }
     return (
+        <>
+        
+        <NavBar/>
         <div>
             <div className="container my-5 py-5">
                 <div className="row">
@@ -86,6 +90,7 @@ function Product() {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

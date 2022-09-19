@@ -1,9 +1,11 @@
 import React from 'react'
 import Bg from './assests/habesha.jpg'
+import NavBar from './NavBar'
 // import "./App.css"
 function Contact() {
   return (
     <div>
+      <NavBar/>
       <div className="container mb-4">
         <div className="row">
           <div className="col-12 text-center py-4 my-4">

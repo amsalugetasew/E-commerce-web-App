@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './Components/Home';
-import NavBar from './Components/NavBar';
+// import NavBar from './Components/NavBar';
 import { Routes, Route } from "react-router-dom";
 import Products from './Components/Products';
 // import Product from './Components/Product';
@@ -10,16 +10,19 @@ import Cart from './Components/Cart';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import Checkout from './Components/Checkout';
-import Login from './Components/Login';
-import Signup from './Components/Signup';
+import Login from './Components/User/Login';
+import Signup from './Components/User/Signup';
 import AddItem from './Components/AddProduct';
 import Footer from './Components/Footer';
-import UserSetting from './Components/UserSetting';
+import UserSetting from './Components/User/UserSetting';
+import ViewItem from './Components/ViewItem';
+import UserList from './Components/User/UserList';
+import SingleUser from './Components/User/SingleUser';
 // import UserProfile from './Components/UserProfile';
 function App() {
   return (
     <div className="App">
-      <NavBar/>
+      {/* <NavBar/> */}
       <Routes basename="/E-commerce-web-App">
         <Route  path='/' element={
           <Home/>
@@ -30,8 +33,20 @@ function App() {
         <Route  path='/add-item' element={
           <AddItem/>
         }/>
+        <Route  path='/view-item' element={
+          <ViewItem/>
+        }/>
+        <Route  path='/user-list' element={
+          <UserList/>
+        }/>
         <Route  path='/sing-up' element={
           <Signup/>
+        }/>
+        <Route  path='/sing-up/:id' element={
+          <Signup/>
+        }/>
+        <Route  path='/single-user/:id' element={
+          <SingleUser/>
         }/>
         <Route  path='/about' element={
           <About/>

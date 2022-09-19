@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
-import Bg from './assests/habesha.jpg'
-import '../App.css'
+import Bg from '../assests/habesha.jpg'
+import '../../App.css'
 import { useNavigate } from 'react-router-dom';
+import NavBar from '../NavBar';
 function Login() {
     const [error, setError] = useState("");
     const [data, setData] = useState({
@@ -30,11 +31,12 @@ function Login() {
         }
         else {
             alert(data.email + data.password)
-            navigate('/add-item')
+            navigate('/view-item')
         }
     }
     return (
         <div>
+            <NavBar/>
             <div className='col-md-10 d-flex mb-5 my-5'>
                 <div className="row  mx-5">
                     <div className="col-md 5 d-flex justify-content-center my-5 mx-5">

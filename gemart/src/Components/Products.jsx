@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import { NavLink } from 'react-router-dom';
+import NavBar from './NavBar';
 // import {DATA} from '../Data'
 var datas = [{
     "id": 1,
@@ -415,6 +416,7 @@ function Products() {
     }
     return (
         <div>
+            <NavBar/>
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-12 mb-5">

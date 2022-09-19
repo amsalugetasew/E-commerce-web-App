@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import NavBarAfterLogin from './NavBarAfterLogin'
 const AddProduct = () => {
   const [error, setError] = useState("")
   const [data, setData] = useState({
@@ -51,6 +52,7 @@ const AddProduct = () => {
 //  }
   return (
     <div>
+      <NavBarAfterLogin/>
       <div className='col-md-10 d-flex mb-5 my-5 justify-content-center'>
         <div className="row  mx-5 px-5">
           <div className="">
