@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { delCart } from '../redux/action/index'
 import { NavLink } from 'react-router-dom'
-import NavBar from './NavBar'
 function Cart() {
   // write name of the file not the name of the function
   const state = useSelector((state) => state.handleCart);
@@ -16,31 +15,30 @@ function Cart() {
     const name = cartItem.profile
     return (
       <>
-      <NavBar/>
+      <div className=''>
       {name? <>
-      <div className='px-4 my-5 bg-light rounded-3 mx-5 my-5 me-5'
-        key={cartItem.id}
-      >
-        <div className="container py-4">
+      <div className='px-4 my-5 bg-light rounded-3 mx-5 my-5 me-5'>
+        <div className="container py-4" key={cartItem._id}>
           <button onClick={() => handleClose(cartItem)} className="btn btn-close float-end"></button>
-          <div className="row justify-content-center">
-            <div className="col-md-4">
+          <div className="row justify-content-center col-md-3 mx-5 card" id='cards'>
+            <div className="col-md-4 my-4 mx-4">
               <img src={require(`../../Server/public/uploads/${name}`)} alt={cartItem.title} height="200px" width="180px" />
             </div>
-            <div className="col-md-4">
-            </div>
+            <div className="col-md-12 fw-bold mx-4">{cartItem.title}</div>
+            <div className="col-md-4 mx-4 mb-4">{cartItem.price}  ETB </div>
           </div>
         </div>
       </div>
       </>
       : <><h1 className='text-center text-capitalize'>Loading...</h1></>}
+      </div>
       </>
+      
     )
   }
   const emptyCart = () => {
     return (
       <>
-      <NavBar/>
       <div className="px-4 my-5 bg-light rounded-3">
         <div className="container py-4">
           <div className="row">

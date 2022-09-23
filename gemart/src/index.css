@@ -93,3 +93,7 @@ border: none;
 #data{
   display: flex;
 }
+#cards{
+  margin-left: 100px;
+  color: teal;
+}

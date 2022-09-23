@@ -3,6 +3,17 @@ var express=require("express");
 const recordRoutes = express.Router();
 const dbo = require("../Database/conn");
 
+// This section will help you get a list of all the records.
+recordRoutes.route("/auth-after-loged").post(function (req, res) {
+  // let db_connect = dbo.getDb();
+  // var email = req.body.email;
+  console.log('email')
+  // db_connect.collection("Users").findOne({'email':email}).then((user) => {
+  //     if (err) throw err;
+  //     res.json(user);
+  //     console.log(user.firstName)
+  //   });
+ });
 
 recordRoutes.route("/login").post( function(req,res){
   let db_connect =dbo.getDb('Products');

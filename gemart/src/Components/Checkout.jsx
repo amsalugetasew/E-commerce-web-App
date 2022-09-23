@@ -6,7 +6,7 @@ const Checkout = () => {
     const state = useSelector((state) => state.handleCart);
     var Total = 0;
     const itemList = (item) => {
-        Total = Total + item.price;
+        Total = parseInt(Total) + parseInt(item.price);
         return(
         <li className="list-group-item d-flex justify-content-between lh-sm">
             <div>

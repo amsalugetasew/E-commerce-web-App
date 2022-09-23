@@ -36,33 +36,6 @@ function Login() {
             setError("Password should be Strong")
         }
         else {
-            // try {
-            //     await fetch("http://localhost:5000/login/", {
-            //         method: "GET",
-            //         headers: {
-            //             "Content-Type": "application/json",
-            //         },
-            //         body: JSON.stringify(data),
-            //     })
-            //         .catch(error => {
-            //             window.alert(error);
-            //             if (error.response &&
-            //                 error.response.status >= 400 &&
-            //                 error.response.status <= 500
-            //             ) {
-            //                 setError(error.response.data.message);
-            //             }
-            //             return;
-            //         });
-            // }
-            // catch (error) {
-            //     if (error.response &&
-            //         error.response.status >= 400 &&
-            //         error.response.status <= 500
-            //     ) {
-            //         setError(error.response.data.message);
-            //     }
-            // }
 
             const response = await fetch(`http://localhost:5000/login/`,{
                 method: "POST",

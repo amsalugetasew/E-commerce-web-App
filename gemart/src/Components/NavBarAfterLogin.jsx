@@ -6,13 +6,22 @@ function NavBar() {
     const win = window.sessionStorage;
     const state = useSelector((state) => state.handleCart);
     const [email, setEmail] = useState(null);
+    const [data, setData] = useState({
+        email: ""
+    });
     useEffect(() =>{
         setEmail(win.email)
-    },[win.email])
+        setData(email)
+    },[win.email, email])
     const localStorageClear = () =>{
         localStorage.clear();
         sessionStorage.clear()
     }
+    useEffect(() =>{
+        if(email){
+            alert(data)
+        }
+    })
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-dark py-3  shadow-sm">

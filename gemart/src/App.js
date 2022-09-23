@@ -2,11 +2,11 @@ import './App.css';
 import Home from './Components/Home';
 // import NavBar from './Components/NavBar';
 import { Routes, Route } from "react-router-dom";
-import Products from './Components/Products';
+import Products from './Components/ForProduct';
 // import Product from './Components/Product';
 import ProductDetail from './Components/ProductDetail';
 // https://www.youtube.com/watch?v=vm3rc3J8U3w
-import Cart from './Components/Cart';
+import Cart from './Components/ForCart';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import Checkout from './Components/Checkout';

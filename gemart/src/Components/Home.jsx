@@ -13,7 +13,7 @@ function Home() {
                 <div className="card-img-overlay d-flex flex-column justify-content-center">
                     <div className="container">
                     <h5 className="card-title display-3 few-border mb-0 text-center">Habesha Fashion</h5>
-                    <p class="card-text lead fs-2 text-center">CHECK OUT ALL THE TRENDS</p>                        
+                    <p className="card-text lead fs-2 text-center">CHECK OUT ALL THE TRENDS</p>                        
                     </div>
                     
                     
