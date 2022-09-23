@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { delCart } from '../redux/action/index'
 import { NavLink } from 'react-router-dom'
+import NavBar from './NavBar'
 function Cart() {
   // write name of the file not the name of the function
   const state = useSelector((state) => state.handleCart);
@@ -12,7 +13,11 @@ function Cart() {
     dispatch(delCart(Item));
   }
   const cartItems = (cartItem) => {
+    const name = cartItem.profile
     return (
+      <>
+      <NavBar/>
+      {name? <>
       <div className='px-4 my-5 bg-light rounded-3 mx-5 my-5 me-5'
         key={cartItem.id}
       >
@@ -20,29 +25,22 @@ function Cart() {
           <button onClick={() => handleClose(cartItem)} className="btn btn-close float-end"></button>
           <div className="row justify-content-center">
             <div className="col-md-4">
-              <img src={cartItem.image} alt={cartItem.title} height="200px" width="180px" />
+              <img src={require(`../../Server/public/uploads/${name}`)} alt={cartItem.title} height="200px" width="180px" />
             </div>
             <div className="col-md-4">
-              {/* <h3>{Product.title}</h3>
-            <p className="lead fw-bold">
-                {Product.qty} X ${Product.price} = ${Product.qty * Product.price}
-            </p> */}
-              {/* <button className="btn btn-outline-dark me-4"
-            onClick={() => handleButtone(product)}>
-                <i className="fa fa-minus"></i>
-            </button>
-            <button className="btn btn-outline-dark me-4"
-            onClick={() => handleButtone(product)}>
-                <i className="fa fa-plus"></i>
-            </button> */}
             </div>
           </div>
         </div>
       </div>
+      </>
+      : <><h1 className='text-center text-capitalize'>Loading...</h1></>}
+      </>
     )
   }
   const emptyCart = () => {
     return (
+      <>
+      <NavBar/>
       <div className="px-4 my-5 bg-light rounded-3">
         <div className="container py-4">
           <div className="row">
@@ -50,10 +48,12 @@ function Cart() {
           </div>
         </div>
       </div>
+      </>
     )
   }
   const button = () => {
     return (
+      
       <div className="container">
         <div className="row">
           <div className='d-flex justify-content-center mb-5'>

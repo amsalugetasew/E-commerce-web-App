@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
 import NavBar from '../NavBarAfterLogin'
-import Gt from "../assests/gech.jpg"
 // https://www.youtube.com/watch?v=paqXfTjznc4
 const SingleUser = () => {
     const [records, setRecords] = useState([]);
@@ -44,9 +43,12 @@ const SingleUser = () => {
             navigate('/user-list')
         }
     }
+    const names = records.profile
     return (
         <>
             <NavBar />
+            {names? 
+        <>
             <div className='card mx-5 w-50 mt-5 mb-5' id='card'>
             <div className=' mx-5 mb-5 mt-5 justify-content-md-center'>
             <div className="buttons">
@@ -56,7 +58,9 @@ const SingleUser = () => {
                 </div>
                 <div className='gt d-flex w-50'>
                     <div className='left'>
-                        <div><img src={Gt} alt="gt" className='profile' width="250px" height="250px" /></div>
+                        <div>
+                            <img src={require(`../../../Server/public/uploads/${records.profile}`)} alt="gt" className='profile' width="250px" height="250px" />
+                            </div>
 
                     </div>
                     <div className='right me-5 mx-5'>
@@ -78,6 +82,8 @@ const SingleUser = () => {
 
             </div>
             </div>
+            </>
+            : <><h1 className='text-center text-capitalize'>Loading...</h1></>}
         </>
     )
 }

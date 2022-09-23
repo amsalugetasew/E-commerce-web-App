@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import Bg from '../assests/habesha.jpg'
 import '../../App.css'
@@ -11,11 +11,17 @@ function Login() {
         password: ''
     });
     const navigate = useNavigate()
+    const win = window.sessionStorage;
     const changeName = ({ currentTarget: input }) => {
         setData({ ...data, [input.name]: input.value });
         setError("");
     };
-    const handleSubmite = (event) => {
+    useEffect(()=>{
+        win.setItem('email', data.email)
+        win.setItem('password', data.password)
+      })
+      console.log(win)
+    const handleSubmite = async(event) => {
         event.preventDefault();
         if (!data.email && !data.password) {
             setError("Email and Password Is Required");
@@ -30,8 +36,49 @@ function Login() {
             setError("Password should be Strong")
         }
         else {
-            alert(data.email + data.password)
-            navigate('/view-item')
+            // try {
+            //     await fetch("http://localhost:5000/login/", {
+            //         method: "GET",
+            //         headers: {
+            //             "Content-Type": "application/json",
+            //         },
+            //         body: JSON.stringify(data),
+            //     })
+            //         .catch(error => {
+            //             window.alert(error);
+            //             if (error.response &&
+            //                 error.response.status >= 400 &&
+            //                 error.response.status <= 500
+            //             ) {
+            //                 setError(error.response.data.message);
+            //             }
+            //             return;
+            //         });
+            // }
+            // catch (error) {
+            //     if (error.response &&
+            //         error.response.status >= 400 &&
+            //         error.response.status <= 500
+            //     ) {
+            //         setError(error.response.data.message);
+            //     }
+            // }
+
+            const response = await fetch(`http://localhost:5000/login/`,{
+                method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+            });
+            if (!response.ok) {
+                setError(`'${data.email +"'  "+response.statusText}`)
+                return;
+            }
+            const records = await response.json();
+            if(records){
+                navigate('/view-item')
+            }
         }
     }
     return (

@@ -18,6 +18,8 @@ import UserSetting from './Components/User/UserSetting';
 import ViewItem from './Components/ViewItem';
 import UserList from './Components/User/UserList';
 import SingleUser from './Components/User/SingleUser';
+import AddProduct from './Components/AddProduct';
+import SingleProduct from './Components/SingleProduct'
 // import UserProfile from './Components/UserProfile';
 function App() {
   return (
@@ -45,6 +47,13 @@ function App() {
         <Route  path='/sing-up/:id' element={
           <Signup/>
         }/>
+        <Route path='/single-product/:id' element={
+          <SingleProduct/>
+        }/>
+        <Route  path='/add-item/:id' element={
+          <AddProduct/>
+        }/>
+        
         <Route  path='/single-user/:id' element={
           <SingleUser/>
         }/>

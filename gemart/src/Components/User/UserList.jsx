@@ -3,9 +3,15 @@ import { Link, NavLink } from 'react-router-dom';
 import NavBar from '../NavBarAfterLogin'
 const Record = (props) => (
     <tr>
+        {props.record.profile? <>
+        <td><img src={require(`../../../Server/public/uploads/${props.record.profile}`)} style={{borderRadius:"50%"}} width="100px" height="100px" alt="profile" />
+        </td>
+        </>
+    : <h3 className='text-center text-capitalize'>image Loading...</h3>}
         <td>{props.record.firstName}</td>
         <td>{props.record.lastName}</td>
         <td>{props.record.email}</td>
+        <td>{props.record.address}</td>
         <td>{props.record.phone}</td>
         <td>
             <Link className="btn btn-primary mx-1 text-white" to={`/sing-up/${props.record._id}`}><i className='fa fa-pencil text-white'></i></Link> |
@@ -23,10 +29,9 @@ const Record = (props) => (
 
 const UserList = () => {
     const [records, setRecords] = useState([]);
-    // const navigate = useNavigate()
     useEffect(() => {
         async function getRecords() {
-            const response = await fetch(`http://localhost:5000/record/`);
+            const response = await fetch(`http://localhost:5000/user/`);
 
             if (!response.ok) {
                 const message = `An error occurred: ${response.statusText}`;
@@ -42,7 +47,7 @@ const UserList = () => {
 
         return;
     }, [records.length]);
-    console.log(records)
+    // console.log(records)
 
     // This method will delete a record
 
@@ -82,9 +87,11 @@ const UserList = () => {
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr className='table-dark'>
+                            <th>User Profile</th>
                             <th>First Name</th>
                             <th>First Name</th>
                             <th>User Email</th>
+                            <th>User Address</th>
                             <th>User Phone</th>
                             <th>Action</th>
                         </tr>
