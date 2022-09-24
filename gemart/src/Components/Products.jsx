@@ -34,7 +34,7 @@ function Products() {
     }, [componentMounted]);
     const Loading = () => {
         return (
-            <>
+            <> <h3 className='text-center text-capitalize'>Product Loading...</h3>
                 <div className="col-md-3">
                     <Skeleton height={350} />
                 </div>

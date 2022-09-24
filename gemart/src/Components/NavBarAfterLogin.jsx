@@ -42,14 +42,33 @@ function NavBar() {
                                 <NavLink className="nav-link text-white" to="/view-item">Manage Product</NavLink>
                             </li>
                         </ul>
-                        <div className="buttons">
+                        {/* <div className="dropdown">
                             <NavLink to="#" className="btn btn-outline-dark" id="teal">
                                 <div className="text-white" ><i className="fa fa-shopping-cart me-1 text-white"></i>Order Notification{state.length?<span className="red">({state.length}) </span>: <>({state.length})</>} </div>
-                                
-                            </NavLink>                            
-                        </div>
+                            </NavLink>                          
+                        </div> */}
                     </div>
                 </div>
+                <div className="dropdown col-md-2">
+                            <NavLink to="#" className="btn btn-outline-dark" id="teal">
+                                <div className="text-white" ><i className="fa fa-shopping-cart me-1  text-white"></i>Order Notification{state.length?<span className="red">({state.length}) </span>: <>({state.length})</>} </div>
+                            </NavLink>  
+                            <div class="dropdown-content bg-dark">
+                                    {state.map((item)=>{
+                                        return(
+                                            <>
+                                        <NavLink to="#" className="btn btn-outline-dark" id="teal">
+                                        <div className="text-white" id="crimson"><i className="fa fa-shopping-cart me-1 text-white"></i>{item.title}</div>
+                                    </NavLink>  
+                                    </>
+                                         );
+                                     })} 
+                                    {/* <NavLink to="#"><i className="fa fa-edit"></i> Change Password</NavLink>
+                                    <div onClick={localStorageClear}><NavLink to="/">
+                                        <i className="fa fa-sign-out me-1">
+                                    </i>Logout</NavLink> </div> */}
+                                </div>                          
+                        </div>
                 {name ?
                             <div class="dropdown">
                                 <div class="dropbtn">{name}</div>
