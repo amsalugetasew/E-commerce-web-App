@@ -58,15 +58,14 @@ function NavBar() {
                                         return(
                                             <>
                                         <NavLink to="#" className="btn btn-outline-dark" id="teal">
-                                        <div className="text-white" id="crimson"><i className="fa fa-shopping-cart me-1 text-white"></i>{item.title}</div>
+                                        <div className="text-white" id="crimson"><div  id="teal"><img height="100px" width="100px" className='profile' src={require(`../../Server/public/uploads/${item.profile}`)} alt="profile" /></div></div>
+                                        <div className="text-white" id="crimson">{item.title.substring(0, 15)}...</div>
+                                        <div className="text-white" id="crimson">{item.price} ETB</div>
+                                        
                                     </NavLink>  
                                     </>
                                          );
                                      })} 
-                                    {/* <NavLink to="#"><i className="fa fa-edit"></i> Change Password</NavLink>
-                                    <div onClick={localStorageClear}><NavLink to="/">
-                                        <i className="fa fa-sign-out me-1">
-                                    </i>Logout</NavLink> </div> */}
                                 </div>                          
                         </div>
                 {name ?

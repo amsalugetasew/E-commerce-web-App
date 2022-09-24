@@ -3,10 +3,11 @@ import React, { useEffect } from 'react'
 // import {DATA} from '../Data'
 import { NavLink, useParams } from 'react-router-dom';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addCart, delCart } from '../redux/action/index'
 import NavBar from './NavBar';
 function ProductDetail() {
+    const state = useSelector((state) => state.handleCart);
     const [cartBtn, setcartBtn] = useState("Add to Cart");
     // const proid = useParams();
     const [records, setRecords] = useState([]);
@@ -55,7 +56,14 @@ function ProductDetail() {
             <NavBar />
             {name ?
                 <>
-                    <h1 className='text-center text-capitalize'>{records.catagory}</h1>
+                {/* {state.map((item)=>{
+                                        return(
+                                            <>
+                                            {state.catagory}
+                                            </>
+                                         );
+                                     })}  */}
+                    <h1 className='text-center text-capitalize'>{records.catagory}({state.length})</h1>
                     <hr />
                     <div className="container my-5">
                         <div className="col d-flex justify-content-center">
@@ -81,6 +89,7 @@ function ProductDetail() {
                             </div>
                         </div>
                     </div>
+                    
                 </>
                 : <><h3 className='text-center text-capitalize'>image Loading...</h3></>}
         </>
