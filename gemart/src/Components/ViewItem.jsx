@@ -9,12 +9,12 @@ const Record = (props) => (
         style={{borderRadius:"50%"}} width="100px" height="100px" alt="profile" /></td>
         </>
     : <h3 className='text-center text-capitalize'>image Loading...</h3>}
-        <td>{props.record.title}</td>
+        <td className='col-md-2'>{props.record.title}</td>
         <td>{props.record.catagory}</td>
         <td>{props.record.price}</td>
         <td>{props.record.rate}</td>
         <td>{props.record.count}</td>
-        <td>{props.record.description}</td>
+        <td className='col-md-2'>{props.record.description}</td>
         <td>
             <Link className="btn btn-primary mx-1 text-white" to={`/add-item/${props.record._id}`}><i className='fa fa-pencil text-white'></i></Link> |
             <button className="btn btn-danger mx-1"
