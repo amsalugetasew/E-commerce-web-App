@@ -36,9 +36,9 @@ const ViewItem = () => {
     const win = window.sessionStorage;
 useEffect(()=>{
   var x= win.getItem('email');
-  const y= win.getItem('password');
+  const y= win.getItem('UserName');
   if(!x && !y)
-  navigate('/signips');
+  navigate('/');
 })
     useEffect(() => {
 

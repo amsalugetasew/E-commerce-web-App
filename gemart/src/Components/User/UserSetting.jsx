@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+import NavBar from '../NavBarAfterLogin';
 
 const UserSetting = () => {
+    const navigate = useNavigate();
+    const win = window.sessionStorage;
+useEffect(()=>{
+  var x= win.getItem('email');
+  const y= win.getItem('UserName');
+  if(!x && !y)
+  navigate('/');
+})
   return (
     <div>
+        <NavBar/>
       <div class="container">
 <div class="row justify-content-center">
     <div class="col-12 col-lg-10 col-xl-8 mx-auto">

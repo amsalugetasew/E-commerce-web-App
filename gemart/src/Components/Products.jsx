@@ -67,7 +67,7 @@ function Products() {
                 {filter.map((product) => {
                     return (
                         <div className="col-md-3 mb-4">
-                            <div className="card h-100 text-center p-4" key={product._id}>
+                            <div className="card h-100 text-center p-4" key={product}>
                                 {product.profile ? <>
                                     <img src={require(`../../Server/public/uploads/${product.profile}`)} height="250px" className="card-img-top" alt={product.title} />
                                 </>

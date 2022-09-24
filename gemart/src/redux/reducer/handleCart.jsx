@@ -4,17 +4,16 @@ const handleCart = (state = cart, action) => {
     switch (action.type) {
         case "ADDITEM":
             // Check if Product is Already Exist
-            const exist = state.find((x) => x._id === product._id);
-            // const propertyValues = Object.values(state);
-
-            // console.log(propertyValues);
-            console.log(typeof(state))
-            if (exist) {
-                // Increase The Quantity
+            // const exist = state.find((x) => x.id === product._id);
+            // console.log(Object.keys(state));
+            let st = state.find((x)=> x._id === product._id)
+            if (st) {
+                // Increase The Quantity               
                 return state.map((x) =>
-                    x.id === product._id ? { ...x, qty: x.qty + 1 } : x
+                    x._id === product._id ? { ...x, qty: x.qty + 1 } : x
                 );
             } else {
+                // console.log(Object.keys(state).length);
                 const product = action.payload;
                 return [
                     ...state, {
@@ -25,14 +24,13 @@ const handleCart = (state = cart, action) => {
             }
             // break;
         case "DELITEM":
-            const exist1 = state.find((x) => x.id === product._id);
-            
-            if (exist1.qty? exist1.qty === 1: null) {
-                return state.filter((x) => x.id !== exist1.id);
+            let exist = state.find((x) => x._id === product._id);
+            if (exist) {
+                return state.filter((x) => x._id !== exist._id);
             } else 
             {
                 return state.map((x) =>
-                    x.id === product._id ? { ...x, qty: x.qty - 1 } : x);
+                    x._id === product._id ? { ...x, qty: x.qty - 1 } : x);
             }
             // break;
         default:

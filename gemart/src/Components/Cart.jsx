@@ -18,7 +18,7 @@ function Cart() {
       <div className=''>
       {name? <>
       <div className='px-4 my-5 bg-light rounded-3 mx-5 my-5 me-5'>
-        <div className="container py-4" key={cartItem._id}>
+        <div className="container py-4" key={cartItem}>
           <button onClick={() => handleClose(cartItem)} className="btn btn-close float-end"></button>
           <div className="row justify-content-center col-md-3 mx-5 card" id='cards'>
             <div className="col-md-4 my-4 mx-4">

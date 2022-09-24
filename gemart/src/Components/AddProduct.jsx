@@ -16,11 +16,15 @@ const AddProduct = () => {
         price: ''
     });
     const navigate = useNavigate();
+    const win = window.sessionStorage;
     const [records, setRecords] = useState([]);
     useEffect(() => {
+        var x= win.getItem('email');
+        const y= win.getItem('UserName');
+        if(!x && !y)
+        navigate('/');
         getRecords();
     });
-
     const getRecords = async () => {
         const res = await fetch(`http://localhost:5000/fetch/product/${id.toString()}`, {
             method: "GET",

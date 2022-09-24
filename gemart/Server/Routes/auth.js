@@ -25,7 +25,7 @@ recordRoutes.route("/login").post( function(req,res){
       }
       // var decpassword= cryptr.decrypt(user.password)
       if(user && user.password === pass){
-        res.send({user});
+        res.send(user);
       }
       else{
         res.status(401).send();

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import NavBar from '../NavBarAfterLogin'
 const Record = (props) => (
     <tr>
@@ -29,6 +29,14 @@ const Record = (props) => (
 
 const UserList = () => {
     const [records, setRecords] = useState([]);
+    const navigate = useNavigate();
+    const win = window.sessionStorage;
+useEffect(()=>{
+  var x= win.getItem('email');
+  const y= win.getItem('UserName');
+  if(!x && !y)
+  navigate('/');
+})
     useEffect(() => {
         async function getRecords() {
             const response = await fetch(`http://localhost:5000/user/`);

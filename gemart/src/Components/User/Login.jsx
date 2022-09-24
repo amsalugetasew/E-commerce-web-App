@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react'
 import Bg from '../assests/habesha.jpg'
 import '../../App.css'
 import { useNavigate } from 'react-router-dom';
@@ -16,11 +15,6 @@ function Login() {
         setData({ ...data, [input.name]: input.value });
         setError("");
     };
-    useEffect(()=>{
-        win.setItem('email', data.email)
-        win.setItem('password', data.password)
-      })
-      console.log(win)
     const handleSubmite = async(event) => {
         event.preventDefault();
         if (!data.email && !data.password) {
@@ -49,6 +43,10 @@ function Login() {
                 return;
             }
             const records = await response.json();
+            win.setItem('email', records.email)
+            win.setItem('UserName', records.firstName)
+            win.setItem('profile', records.profile)
+            // console.log((records.firstName));
             if(records){
                 navigate('/view-item')
             }

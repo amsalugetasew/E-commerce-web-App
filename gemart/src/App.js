@@ -35,6 +35,9 @@ function App() {
         <Route  path='/add-item' element={
           <AddItem/>
         }/>
+        <Route  path='/profile-setting' element={
+          <UserSetting/>
+        }/>
         <Route  path='/view-item' element={
           <ViewItem/>
         }/>

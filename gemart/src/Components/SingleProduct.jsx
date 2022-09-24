@@ -6,8 +6,13 @@ const SingleUser = () => {
     const [records, setRecords] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
+    const win = window.sessionStorage;
     useEffect(() => {
         getRecords();
+        var x= win.getItem('email');
+  const y= win.getItem('UserName');
+  if(!x && !y)
+  navigate('/');
     });
     const getRecords = async () => {
         const res = await fetch(`http://localhost:5000/fetch/product/${id.toString()}`, {

@@ -9,7 +9,13 @@ const SingleUser = () => {
     useEffect(() => {
         getRecords();
     });
-
+    const win = window.sessionStorage;
+useEffect(()=>{
+  var x= win.getItem('email');
+  const y= win.getItem('UserName');
+  if(!x && !y)
+  navigate('/');
+})
     const getRecords = async () => {
         const res = await fetch(`http://localhost:5000/fetch/${id.toString()}`, {
             method: "GET",
