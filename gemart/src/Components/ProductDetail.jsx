@@ -34,7 +34,7 @@ function ProductDetail() {
             setRecords(data)
         }
     }
-    
+
     // const productDetail = data.filter(x => (x.id).toString()  === (id).toString() );
     // const product = productDetail[0];
     const product = records
@@ -52,34 +52,37 @@ function ProductDetail() {
     const name = product.profile
     return (
         <>
-        <NavBar/>
-        {name? 
-        <>
-            <h1 className='text-center text-capitalize'>{records.catagory}</h1>
-            <hr />
-            <div className="container my-5">
-                <div className="col d-flex justify-content-center">
-                    <div className="col-mid-6 d-flex justify-content-center product" key={product._id}>
-                        <img src={require(`../../Server/public/uploads/${name}`)} height="250px" className="card-img-top" alt={product.title}/>
-                        {/* <img src={path+product.profile} height="250px" className="card-img-top" alt={product.title}/> */}
-                    </div>
-                    <div className="col-mid-6 mx-5 d-flex flex-column justify-content-center">
-                        <h1 className='display-5 fw-bold'>{product.title}</h1>
-                        <hr />
-                        <h2 className='my-4'>{product.price}(ETB)</h2>
-                        <p className='lead'>{product.description}</p>
-                        <div className='d-flex'>
-                            <button onClick={() => handleCart(product)} className='btn ms-5 btn-outline-dark w-25'>{cartBtn}</button>
-                            <NavLink to="/cart" className="btn btn-outline-dark ms-4 ">
-                                <span className="fa">Go to Cart</span>
-                            </NavLink>
+            <NavBar />
+            {name ?
+                <>
+                    <h1 className='text-center text-capitalize'>{records.catagory}</h1>
+                    <hr />
+                    <div className="container my-5">
+                        <div className="col d-flex justify-content-center">
+                            <div className="col-mid-6 d-flex justify-content-center product" key={product._id}>
+                                <img src={require(`../../Server/public/uploads/${name}`)} height="250px" className="card-img-top" alt={product.title} />
+                                {/* <img src={path+product.profile} height="250px" className="card-img-top" alt={product.title}/> */}
+                            </div>
+                            <div className="col-mid-6 mx-5 d-flex flex-column justify-content-center">
+                                <h1 className='display-5 fw-bold'>{product.title}</h1>
+                                <hr />
+                                <h2 className='my-4'>{product.price}(ETB)</h2>
+                                <p className='lead'>{product.description}</p>
+                                <div className='d-flex'>
+                                    <button onClick={() => handleCart(product)} className='btn ms-5 btn-outline-dark w-25'>{cartBtn}</button>
+                                    <NavLink to="/cart" className="btn btn-outline-dark ms-4 ">
+                                        <span className="lead">Go to Cart</span>
+                                    </NavLink>
+                                    <NavLink to="/Products" className="btn btn-outline-dark btn-white ms-4">
+                                        <span className="lead">Add More</span>
+                                    </NavLink>
+                                </div>
+
+                            </div>
                         </div>
-                        
                     </div>
-                </div>
-            </div>
-            </>
-            : <><h3 className='text-center text-capitalize'>image Loading...</h3></>}
+                </>
+                : <><h3 className='text-center text-capitalize'>image Loading...</h3></>}
         </>
     )
 
