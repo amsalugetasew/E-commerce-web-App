@@ -37,7 +37,7 @@ function NavBar() {
                                     <i className="fa fa-user-plus me-1 text-white">Register</i> 
                                 </NavLink> */}
                                 <NavLink to="/cart" className="btn btn-outline-dark ms-2">
-                                    <i className="fa fa-shopping-cart me-1 fa-bold text-white">Cart ({state.length})</i>                                     
+                                    <i className="fa fa-shopping-cart me-1 fa-bold text-white">Cart {state.length?<span className="red">({state.length}) </span>: <>({state.length})</>} </i>                                     
                                 </NavLink>
                                 {/* <i class="fa-solid fa-user">x</i> */}
                             </div>

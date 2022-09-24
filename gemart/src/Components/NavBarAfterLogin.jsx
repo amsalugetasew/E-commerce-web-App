@@ -44,7 +44,7 @@ function NavBar() {
                         </ul>
                         <div className="buttons">
                             <NavLink to="#" className="btn btn-outline-dark" id="teal">
-                                <div className="text-white" ><i className="fa fa-shopping-cart me-1 text-white"></i>Order Notification ({state.length})</div>
+                                <div className="text-white" ><i className="fa fa-shopping-cart me-1 text-white"></i>Order Notification{state.length?<span className="red">({state.length}) </span>: <>({state.length})</>} </div>
                                 
                             </NavLink>                            
                         </div>
