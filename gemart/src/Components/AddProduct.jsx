@@ -171,9 +171,8 @@ const AddProduct = () => {
                         myobj
                     ),
                 });
-                console.log(title)
                 alert(`User ${title} Successfully Updated`)
-                navigate('/user-list')
+                navigate('/view-item')
            
         }
     }
@@ -216,6 +215,7 @@ const AddProduct = () => {
                                     <label htmlFor="Fname" className="form-label lbl">Product Image:</label>
                                     <input type="file"
                                         accept='image/'
+                                        required
                                         ref={inputRef6}
                                         value={data.File || records.File}
                                         name='File'

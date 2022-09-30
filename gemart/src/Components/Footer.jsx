@@ -82,7 +82,7 @@ const Footer = () => {
           <p><i className="fas fa-home me-3"></i> Gondar, Marki, Ethiopia</p>
           <p>
             <i className="fas fa-envelope me-3"></i>
-            info@example.com
+            amsalugetasew12@gmail.com
           </p>
           <p><i className="fas fa-phone me-3"></i> + 251 928 531 589</p>
           <p><i className="fas fa-print me-3"></i> + 251 928 551 749</p>

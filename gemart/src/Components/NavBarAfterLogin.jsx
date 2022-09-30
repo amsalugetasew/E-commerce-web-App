@@ -41,12 +41,10 @@ function NavBar() {
                             <li className="nav-item" id="teal">
                                 <NavLink className="nav-link text-white" to="/view-item">Manage Product</NavLink>
                             </li>
+                            <li className="nav-item" id="teal">
+                                <NavLink className="nav-link text-white" to="/view-comment">View Feedback</NavLink>
+                            </li>
                         </ul>
-                        {/* <div className="dropdown">
-                            <NavLink to="#" className="btn btn-outline-dark" id="teal">
-                                <div className="text-white" ><i className="fa fa-shopping-cart me-1 text-white"></i>Order Notification{state.length?<span className="red">({state.length}) </span>: <>({state.length})</>} </div>
-                            </NavLink>                          
-                        </div> */}
                     </div>
                 </div>
                 <div className="dropdown col-md-2">

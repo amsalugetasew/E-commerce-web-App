@@ -21,9 +21,10 @@ const ObjectId = require("mongodb").ObjectId;
     var db_connect = dbo.getDb(); 
     let MyId = { _id: ObjectId( req.params.id )};
     var newvalues = { $set: {profile: req.body.profile,title: req.body.title, catagory: req.body.catagory, price:req.body.price, rate:req.body.rate, count:req.body.count, description: req.body.description} };
-    db_connect.collection("Product").updateOne(MyId, newvalues, function(err, res) {
+    db_connect.collection("Product").updateOne(MyId, newvalues, function(err, response) {
       if (err) throw err;
       console.log(`1 document updated ${req.body.title}`);
+      res.json(response);
     });
   }) 
 

@@ -203,7 +203,7 @@ const Signup = () => {
             };
             try {
                 await fetch(`http://localhost:5000/update/${id.toString()}`, {
-                    method: "PATCH",
+                    method: "POST",
                     headers: {
                         "Content-Type": "application/json",
                     },
@@ -350,7 +350,6 @@ const Signup = () => {
                         <input type='submit'
                             value={id ? "Update User" : "Add User"}
                             className='btn btn-outline-primary btn-dark text-white text-uppercase mb-4 submit'
-                        // value="Add User" 
                         />
                         
                     </form>

@@ -1,13 +1,3 @@
-
-// const { MongoClient } = require('mongodb');
-// const uri = "mongodb+srv://gechsew:Gecho%401078@cluster0.ribx0.mongodb.net/?retryWrites=true&w=majority";
-// const clients = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// clients.connect(err => {
-//   const collection = client.db("Products").collection("Users");
-//   // perform actions on the collection object
-//   clients.close();
-// });
-
 const { MongoClient } = require("mongodb");
 const Db = process.env.ATLAS_URI;
 const client = new MongoClient(Db, {
@@ -35,12 +25,16 @@ module.exports = {
 };
 
 
-// const mongoose = require('mongoose')
+// const url = process.env.ATLAS_URI;
 
-// const DB = 'mongodb+srv://<YOUR USERNAME>:<YOUR PASSWORD>@cluster0.zozv5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-// mongoose.connect(DB, {
+// const connectionParams={
 //     useNewUrlParser: true,
-//      useUnifiedTopology: true,
-// }).then(() =>{
-//     console.log('Database connected..')
-// })
+//     useUnifiedTopology: true 
+// }
+// mongoose.connect(url,connectionParams)
+//     .then( () => {
+//         console.log('Connected to the database ')
+//     })
+//     .catch( (err) => {
+//         console.error(`Error connecting to the database. n${err}`);
+//     })

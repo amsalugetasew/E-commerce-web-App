@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(require("./Routes/ProductRoutes"));
 app.use(require("./Routes/UserRoutes"));
 app.use(require("./Routes/auth"))
+app.use(require('./Routes/ContactRoutes'))
 // app.use(require("./Routes/UserUpload"));
 // const UserUpload = require('./Routes/UserUpload');
 // app.use('/user', UserUpload);

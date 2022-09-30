@@ -59,7 +59,7 @@ function Cart() {
             <span className="lead">Proceed To Checkout</span>
           </NavLink>
           <NavLink to="/Products" className="btn btn-outline-dark btn-dark text-white me-5">
-            <span className="lead">Go to Cart</span>
+            <span className="lead">Add More</span>
           </NavLink>
           </div>
         </div>

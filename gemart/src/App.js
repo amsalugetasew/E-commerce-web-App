@@ -20,6 +20,8 @@ import UserList from './Components/User/UserList';
 import SingleUser from './Components/User/SingleUser';
 import AddProduct from './Components/AddProduct';
 import SingleProduct from './Components/SingleProduct'
+import UsersFeedBack from './Components/UsersFeedBack';
+import SingleContactInfo from './Components/SingleContactInfo';
 // import UserProfile from './Components/UserProfile';
 function App() {
   return (
@@ -31,6 +33,12 @@ function App() {
         }/>
         <Route  path='/sign-in' element={
           <Login/>
+        }/>
+        <Route  path='/feedback-detail/:id' element={
+          <SingleContactInfo/>
+        }/>
+        <Route  path='/view-comment' element={
+          <UsersFeedBack/>
         }/>
         <Route  path='/add-item' element={
           <AddItem/>
