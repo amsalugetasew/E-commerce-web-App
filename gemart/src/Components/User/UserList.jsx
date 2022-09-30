@@ -97,15 +97,15 @@ const UserList = () => {
         setData({ ...data, [input.name]: input.value });
         setError("");
     };
-    const Clear = (e) => {
-        e.preventDefault()
-        if(!data.search){
-            setError('please enter search')
-        }
-        else{
-        setData("")
-        }
-    }
+    // const Clear = (e) => {
+    //     e.preventDefault()
+    //     if(!data.search){
+    //         setError('please enter search')
+    //     }
+    //     else{
+    //     setData("")
+    //     }
+    // }
     return (
         <>
             <NavBar />

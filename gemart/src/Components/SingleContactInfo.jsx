@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink, useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import NavBar from './NavBarAfterLogin';
 
 const SingleContactInfo = () => {
-    const [records, setRecords] = useState([]);
-    const navigate = useNavigate();
+    const [ setRecords] = useState([]);
     const { id } = useParams();
     useEffect(()=>{
     const getRecords = async () => {
@@ -30,17 +29,17 @@ const SingleContactInfo = () => {
     getRecords()
 })
     
-    async function deleteRecord(id) {
-        if (window.confirm('Are you want to delete this record sure?')) {
-            await fetch(`http://localhost:5000/product/${id}`, {
-                method: "DELETE"
-            });
-            const newRecords = records.filter((el) => el._id !== id);
-            setRecords(newRecords);
-            alert("Successfully deleted")
-            navigate('/user-list')
-        }
-    }
+    // async function deleteRecord(id) {
+    //     if (window.confirm('Are you want to delete this record sure?')) {
+    //         await fetch(`http://localhost:5000/product/${id}`, {
+    //             method: "DELETE"
+    //         });
+    //         const newRecords = records.filter((el) => el._id !== id);
+    //         setRecords(newRecords);
+    //         alert("Successfully deleted")
+    //         navigate('/user-list')
+    //     }
+    // }
 
 
 //   const name = records.message

@@ -104,9 +104,9 @@ const ViewItem = () => {
         setData({ ...data, [input.name]: input.value });
         setError("");
     };
-    const Clear = () => {
-        setData("")
-    }
+    // const Clear = () => {
+    //     setData("")
+    // }
     return (
         <>
             <NavBar />
