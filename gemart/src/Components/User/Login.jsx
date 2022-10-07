@@ -45,8 +45,11 @@ function Login() {
             const records = await response.json();
             win.setItem('email', records.email)
             win.setItem('UserName', records.firstName)
+            win.setItem('LastName', records.lastName)
             win.setItem('profile', records.profile)
-            // console.log((records.firstName));
+            win.setItem('phone', records.phone)
+            win.setItem('address', records.address)
+            // console.log((records.phone));
             if(records){
                 navigate('/view-item')
             }

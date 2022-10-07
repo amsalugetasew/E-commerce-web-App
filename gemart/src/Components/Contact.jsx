@@ -134,6 +134,7 @@ function Contact() {
           </div>
         </div>
       </div>
+      <input type="text" placeholder='number1' />
     </div>
   )
 }
